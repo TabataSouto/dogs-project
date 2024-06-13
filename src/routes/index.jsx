@@ -6,7 +6,9 @@ function AppRoutes() {
   return (
     <Switch>
       <Route path="/" element={<Home />} />
-      <Route path="/login" element={<Login />} />
+      {/* o /* depois de login é a configuração necessária para
+      que subrotas sejam aceitas. Como por exemplo /login/criar */}
+      <Route path="/login/*" element={<Login />} />
     </Switch>
   );
 }
