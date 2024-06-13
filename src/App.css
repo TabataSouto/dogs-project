@@ -12,6 +12,7 @@ body {
   --type-second: 'Spectral', Georgia;
   --color-first: #333;
   font-family: var(--type-first);
+  padding-top: 4rem ;
 }
 
 a {
