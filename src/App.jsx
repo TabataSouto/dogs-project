@@ -2,13 +2,16 @@ import Header from "./components/header";
 import Footer from "./components/footer";
 import AppRoutes from "./routes";
 import "./App.css";
+import { UserStorage } from "./context/userContext";
 
 function App() {
   return (
     <div>
-      <Header />
-      <AppRoutes />
-      <Footer />
+      <UserStorage>
+        <Header />
+        <AppRoutes />
+        <Footer />
+      </UserStorage>
     </div>
   );
 }
