@@ -7,7 +7,7 @@ import { useContext } from "react";
 import { UserContext } from "../../context/userContext";
 
 function LoginForm() {
-  const { userLogin } = useContext(UserContext);
+  const { userLogin, error, loading } = useContext(UserContext);
 
   // retorna o value, setValue e o onChange.
   const username = useForm();
@@ -27,7 +27,10 @@ function LoginForm() {
       <form onSubmit={handleClick}>
         <Input label="Usuário" type="text" name="username" {...username} />
         <Input label="Senha" type="password" name="password" {...password} />
-        <Button>Entrar</Button>
+        <Button disabled={loading}>
+          {loading ? "Carregando..." : "Entrar"}
+        </Button>
+        {error && <p>{error}</p>}
       </form>
       <Link to="/login/criar"></Link>
     </section>
