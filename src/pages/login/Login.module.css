@@ -1,0 +1,32 @@
+.loginClass {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 100vh;
+  gap: 2rem
+}
+
+.loginClass::before {
+  display: block;
+  content: '';
+  background: url("../../assets/login.jpg") no-repeat center center;
+  background-size: cover;
+}
+
+.formsClass {
+  max-width: 30rem;
+  padding: 2rem;
+}
+
+@media (max-width: 40rem) {
+  .loginClass {
+    grid-template-columns: 1fr;
+  }
+
+  .loginClass::before {
+    display: block;
+  }
+
+  .formsClass {
+    max-width: 100%;
+  }
+}

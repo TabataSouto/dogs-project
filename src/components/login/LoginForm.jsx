@@ -1,13 +1,18 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
 
+import { UserContext } from "../../context/userContext";
 import Input from "../../components/forms/Input";
 import Button from "../../components/forms/Button";
 import useForm from "../../hooks/useForm";
-import { useContext } from "react";
-import { UserContext } from "../../context/userContext";
+import Error from "../../components/helper/Error";
+
+import styles from "./LoginForm.module.css";
+import btnStyle from "../forms/Button.module.css";
 
 function LoginForm() {
   const { userLogin, error, loading } = useContext(UserContext);
+  const { formClass, lostClass, registerClass, subtitleClass } = styles;
 
   // retorna o value, setValue e o onChange.
   const username = useForm();
@@ -22,17 +27,26 @@ function LoginForm() {
   };
 
   return (
-    <section>
-      <h1>LoginForm</h1>
-      <form onSubmit={handleClick}>
+    <section className="animeLeft">
+      <h1 className="title">LoginForm</h1>
+      <form className={formClass} onSubmit={handleClick}>
         <Input label="Usuário" type="text" name="username" {...username} />
         <Input label="Senha" type="password" name="password" {...password} />
         <Button disabled={loading}>
           {loading ? "Carregando..." : "Entrar"}
         </Button>
-        {error && <p>{error}</p>}
+        <Error error={error} />
       </form>
-      <Link to="/login/criar"></Link>
+      <Link className={lostClass} to="/login/perdeu">
+        Perdeu a Senha?
+      </Link>
+      <div className={registerClass}>
+        <h2 className={subtitleClass}>Cadastre-se</h2>
+        <p>Ainda não possui conta? Cadastre-se no site.</p>
+        <Link className={btnStyle.button} to="/login/criar">
+          Cadastro
+        </Link>
+      </div>
     </section>
   );
 }

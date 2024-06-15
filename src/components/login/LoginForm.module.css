@@ -1,0 +1,41 @@
+.formClass {
+  margin-bottom: 2rem;
+}
+
+.lostClass {
+  display: inline-block;
+  color: #666;
+  padding: 0.5rem 0;
+  line-height: 1;
+}
+
+.lostClass::after {
+  content: '';
+  height: 2px;
+  width: 100%;
+  background: currentColor;
+  display: block;
+}
+
+.registerClass {
+  margin-top: 4rem;
+}
+
+.registerClass p {
+  margin: 2rem 0;
+}
+
+.subtitleClass {
+  font-family: var(--type-second);
+  line-height: 1;
+  font-size: 2rem;
+}
+
+.subtitleClass::after {
+  content: '';
+  display: block;
+  background: #ddd;
+  height: 0.5rem;
+  width: 3rem;
+  border-radius: 0.2rem;
+}
