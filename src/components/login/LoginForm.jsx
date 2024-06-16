@@ -28,7 +28,7 @@ function LoginForm() {
 
   return (
     <section className="animeLeft">
-      <h1 className="title">LoginForm</h1>
+      <h1 className="title">Login</h1>
       <form className={formClass} onSubmit={handleClick}>
         <Input label="Usuário" type="text" name="username" {...username} />
         <Input label="Senha" type="password" name="password" {...password} />

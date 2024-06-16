@@ -1,9 +1,40 @@
-import React from 'react'
+import useForm from "../../hooks/useForm";
+import { UserContext } from "../../context/userContext";
+import { USER_POST } from "../../api";
+import Input from "../forms/Input";
+import Button from "../forms/Button";
+import { useContext } from "react";
 
 function LoginCreate() {
+  const { userLogin } = useContext(UserContext);
+  const username = useForm();
+  const email = useForm("email");
+  const password = useForm();
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    const { url, options } = USER_POST({
+      username: username.value,
+      email: email.value,
+      password: password.value,
+    });
+    const response = await fetch(url, options);
+
+    if (response.ok) userLogin(username.value, password.value);
+  };
+
   return (
-    <div>LoginCreate</div>
-  )
+    <section className="animeLeft">
+      <h1 className="title">Cadastre-se</h1>
+      <form onSubmit={handleSubmit}>
+        <Input label="Usuário" type="text" name="username" {...username} />
+        <Input label="E-mail" type="email" name="email" {...email} />
+        <Input label="Senha" type="password" name="password" {...password} />
+        <Button>Cadastrar</Button>
+      </form>
+    </section>
+  );
 }
 
-export default LoginCreate
+export default LoginCreate;
