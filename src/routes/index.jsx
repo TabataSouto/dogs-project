@@ -2,7 +2,7 @@ import { Route, Routes as Switch } from "react-router-dom";
 import Home from "../pages/home";
 import Login from "../pages/login";
 import User from "../pages/user";
-import ProtectedRoute from "./protectedRoute";
+import ProtectedRoute from "./ProtectedRoute";
 
 function AppRoutes() {
   return (

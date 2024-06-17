@@ -1,7 +1,13 @@
+import HeaderRoutes from "../../routes/HeaderRoutes";
+import UserHeader from "../../components/header/UserHeader";
+
 function User() {
   return (
-    <div>Usuário logado</div>
-  )
+    <section className="container">
+      <UserHeader />
+      <HeaderRoutes />
+    </section>
+  );
 }
 
 export default User;

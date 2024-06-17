@@ -1,0 +1,122 @@
+.navClass {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr );
+  gap: 1rem;
+}
+
+.navClass a,
+.navClass button,
+.mobileButtonClass {
+  background: #eee;
+  border-radius: 0.2rem;
+  height: 40px;
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid transparent;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.navClass a:hover,
+.navClass a:focus,
+.navClass button:hover,
+.navClass button:hover {
+  background: #fff;
+  box-shadow: 0 0 0 3px #eee;
+  border-color: #333;
+  outline: none;
+}
+
+.navClass a:global(.active) {
+  background: #fff;
+  box-shadow: 0 0 0 3px #fea;
+  border-color: #fb1;
+}
+
+/* quando usamos svg > * informamos que queremos falar com
+todos os elementos dentro de svg */
+.navClass a:global(.active) svg > * {
+  fill: #fb1;
+}
+
+.mobileButtonClass {
+  padding: 0px;
+}
+
+.mobileButtonClass::after {
+  content: '';
+  display: block;
+  width: 1.2rem;
+  height: 2px;
+  border-radius: 2px;
+  background: currentColor;
+  box-shadow: 0 6px currentColor, 0 -6px currentColor;
+  transition: 0.2s;
+}
+
+.mobileButtonClass:focus,
+.mobileButtonClass:hover,
+.mobileButtonActiveClass {
+  outline: none;
+  background: #fff;
+  box-shadow: 0 0 0 3px #fea;
+  border-color: #fb1;
+  color: #fb1
+}
+
+.mobileButtonActiveClass::after {
+  transform: rotate(90deg);
+  width: 4px;
+  height: 4px;
+  box-shadow: 0 8px currentColor, 0 -8px currentColor;
+}
+
+.navMobileClass {
+  display: block;
+  position: absolute;
+  top: 70px;
+  right: 0px;
+  height: auto;
+  padding: 0 1rem;
+  background: #fff;
+  box-shadow: 0 1px 2px rgb(0 0 0 / 0.2);
+  border-radius: 0.2rem;
+  transform: translateX(-10px);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.navMobileClass a,
+.navMobileClass button {
+   display: flex;
+   align-items: center;
+   background: none;
+   width: 100%;
+   border: none;
+   border-bottom: 1px solid #eee;
+   padding: 0.5rem 0;
+   cursor: pointer;
+}
+
+.navMobileClass a:hover svg > *,
+.navMobileClass button:hover svg > * {
+  fill: #fb1
+}
+
+.navMobileClass button {
+   border-bottom: none;
+}
+
+.navMobileClass svg {
+  margin-right: 0.5rem;
+}
+
+.navMobileActiveClass {
+  pointer-events: initial;
+  transition: 0.3s;
+  transform: initial;
+  opacity: 1;
+  z-index: 100;
+}
