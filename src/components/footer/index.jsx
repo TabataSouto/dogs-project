@@ -4,7 +4,7 @@ import styles from "./Footer.module.css";
 function Footer() {
   const { footer } = styles;
 
-  return <footer>Footer</footer>;
+  return <footer></footer>;
 }
 
 export default Footer;
