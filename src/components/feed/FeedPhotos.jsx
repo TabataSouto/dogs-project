@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import PropTypes from "prop-types";
 import { PHOTOS_GET } from "../../api";
 import FeedPhotosItem from "./FeedPhotosItem";
 import Error from "../helper/Error";
@@ -6,7 +7,7 @@ import Loading from "../helper/Loading";
 import useFetch from "../../hooks/useFetch";
 import styles from "./FeedPhotos.module.css";
 
-function FeedPhotos() {
+function FeedPhotos({ setModalPhoto }) {
   const { feedClass } = styles;
   const { data, loading, error, request } = useFetch();
 
@@ -28,7 +29,11 @@ function FeedPhotos() {
     return (
       <ul className={`${feedClass} animeLeft`}>
         {data.map((photo) => (
-          <FeedPhotosItem key={photo.id} photo={photo} />
+          <FeedPhotosItem
+            key={photo.id}
+            photo={photo}
+            setModalPhoto={setModalPhoto}
+          />
         ))}
       </ul>
     );
@@ -36,3 +41,7 @@ function FeedPhotos() {
 }
 
 export default FeedPhotos;
+
+FeedPhotos.propTypes = {
+  setModalPhoto: PropTypes.func,
+};
