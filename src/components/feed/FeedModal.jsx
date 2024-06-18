@@ -7,7 +7,7 @@ import PhotoContent from "../photo/PhotoContent";
 import useFetch from "../../hooks/useFetch";
 import styles from "./FeedModal.module.css";
 
-function FeedModal({ photo }) {
+function FeedModal({ photo, setModalPhoto }) {
   const { modalClass } = styles;
 
   const { data, error, loading, request } = useFetch();
@@ -17,8 +17,14 @@ function FeedModal({ photo }) {
     request(url, options);
   }, [photo, request]);
 
+  const handleOutsideClick = ({ target, currentTarget }) => {
+    if (target === currentTarget) {
+      setModalPhoto(null);
+    }
+  };
+
   return (
-    <div className={modalClass}>
+    <div className={modalClass} onClick={handleOutsideClick}>
       {error && <Error error={error} />}
       {loading && <Loading />}
       {data && <PhotoContent data={data} />}
@@ -30,4 +36,5 @@ export default FeedModal;
 
 FeedModal.propTypes = {
   photo: PropTypes.objectOf(),
+  setModalPhoto: PropTypes.func,
 };

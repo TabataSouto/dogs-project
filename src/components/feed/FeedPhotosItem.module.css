@@ -26,7 +26,7 @@
   height: 10px;
   display: inline-block;
   margin-right: 0.25rem;
-  background: url("../../assets/visualizacao-black.svg") no-repeat;
+  background: url("../../assets/visualizacao.svg") no-repeat;
 }
 
 .photoClass:hover span {

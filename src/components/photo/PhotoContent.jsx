@@ -4,7 +4,7 @@ import PhotoComments from "./PhotoComments"
 import styles from "./PhotoContent.module.css";
 
 function PhotoContent({ data }) {
-  const { photoClass, imgClass, datailsClass, viewsClass, attributesClass } =
+  const { photoClass, imgClass, datailsClass, viewsClass, attributesClass, authorClass } =
     styles;
   const { photo, comments } = data;
 
@@ -15,7 +15,7 @@ function PhotoContent({ data }) {
       </div>
       <div className={datailsClass}>
         <div>
-          <p>
+          <p className={authorClass}>
             <Link to={`/perfil/${photo.author}`}>@{photo.author}</Link>
             <span className={viewsClass}>{photo.acessos}</span>
           </p>
