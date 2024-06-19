@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import styles from "./FeedPhotosItem.module.css";
+import Image from "../helper/Image";
 
 function FeedPhotosItem({ photo, setModalPhoto }) {
   const { photoClass } = styles;
@@ -10,7 +11,7 @@ function FeedPhotosItem({ photo, setModalPhoto }) {
 
   return (
     <li className={photoClass} onClick={handleClick}>
-      <img src={photo.src} alt={photo.title} />
+      <Image src={photo.src} alt={photo.title} />
       <span>{photo.acessos}</span>
     </li>
   );

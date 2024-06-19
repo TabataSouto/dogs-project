@@ -5,6 +5,7 @@ import styles from "./PhotoContent.module.css";
 import { useContext } from "react";
 import { UserContext } from "../../context/userContext";
 import PhotoDelete from "./PhotoDelete";
+import Image from "../helper/Image";
 
 function PhotoContent({ data }) {
   const {
@@ -21,7 +22,7 @@ function PhotoContent({ data }) {
   return (
     <div className={photoClass}>
       <div className={imgClass}>
-        <img src={photo.src} alt={photo.title} />
+        <Image src={photo.src} alt={photo.title} />
       </div>
       <div className={datailsClass}>
         <div>
