@@ -28,9 +28,9 @@ function UserPhotoPost() {
 
     const formData = new FormData();
     formData.append("img", img.file);
-    formData.append("nome", nome.file);
-    formData.append("peso", peso.file);
-    formData.append("idade", idade.file);
+    formData.append("nome", nome.value);
+    formData.append("peso", peso.value);
+    formData.append("idade", idade.value);
 
     const token = window.localStorage.getItem("token");
     const { url, options } = PHOTO_POST(formData, token);
