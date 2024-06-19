@@ -2,10 +2,12 @@ import { useState } from "react";
 import PropTypes from "prop-types";
 import useFetch from "../../hooks/useFetch";
 import Error from "../helper/Error";
-import { ReactComponent as Enviar } from "../../assets/enviar.svg";
 import { COMMENT_POST } from "../../api";
+import { ReactComponent as Enviar } from "../../assets/enviar.svg";
+import styles from "./PhotoCommentsForm.module.css";
 
 function PhotoCommentsForm({ id, setComments }) {
+  const { formClass, textareaClass, buttonClass } = styles;
   const { request, error } = useFetch();
   const [comment, setComment] = useState("");
 
@@ -27,15 +29,16 @@ function PhotoCommentsForm({ id, setComments }) {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className={formClass} onSubmit={handleSubmit}>
       <textarea
+        className={textareaClass}
         id="comment"
         name="comment"
         placeholder="Comente..."
         value={comment}
         onChange={handleChange}
       />
-      <button>
+      <button className={buttonClass}>
         <Enviar />
       </button>
       {error && <Error error={error} />}
