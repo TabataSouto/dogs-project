@@ -7,21 +7,23 @@ import Loading from "../helper/Loading";
 import useFetch from "../../hooks/useFetch";
 import styles from "./FeedPhotos.module.css";
 
-function FeedPhotos({ setModalPhoto }) {
+function FeedPhotos({ user, setModalPhoto, page, setInfinite }) {
   const { feedClass } = styles;
   const { data, loading, error, request } = useFetch();
 
   useEffect(() => {
     (async () => {
+      const total = 3;
       const { url, options } = PHOTOS_GET({
-        page: 1,
-        total: 6,
-        user: 0,
+        page,
+        total,
+        user,
       });
-      const { json } = await request(url, options);
-      console.log(json);
+      const { response, json } = await request(url, options);
+
+      if (response && response.ok && json.length < total) setInfinite(false);
     })();
-  }, [request]);
+  }, [request, user, page]);
 
   if (error) return <Error error={error} />;
   if (loading) return <Loading />;
@@ -44,4 +46,7 @@ export default FeedPhotos;
 
 FeedPhotos.propTypes = {
   setModalPhoto: PropTypes.func,
+  user: PropTypes.object,
+  page: PropTypes.string,
+  setInfinite: PropTypes.func,
 };
