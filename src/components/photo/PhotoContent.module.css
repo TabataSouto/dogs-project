@@ -12,6 +12,11 @@
   animation: scaleUp 0.3s forwards;
 }
 
+.singleClass.photoClass {
+  grid-template-columns: 1fr;
+  height: auto;
+}
+
 @keyframes scaleUp {
   to {
     opacity: 1;
@@ -19,12 +24,22 @@
   }
 }
 
-.datailsClass {
+.detailsClass {
   padding: 2rem 2rem 0 2rem;
+}
+
+.singleClass .detailsClass {
+  padding: 1rem 0 0 0;
 }
 
 .imgClass {
   grid-row: 1/4;
+}
+
+.singleClass .imgClass {
+  grid-row: 1;
+  border-radius: 0.4rem;
+  overflow: hidden;
 }
 
 .commentsClass {

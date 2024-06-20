@@ -7,24 +7,25 @@ import { UserContext } from "../../context/userContext";
 import PhotoDelete from "./PhotoDelete";
 import Image from "../helper/Image";
 
-function PhotoContent({ data }) {
+function PhotoContent({ data, single }) {
   const {
     photoClass,
     imgClass,
-    datailsClass,
+    detailsClass,
     viewsClass,
     attributesClass,
     authorClass,
+    singleClass,
   } = styles;
   const user = useContext(UserContext);
   const { photo, comments } = data;
 
   return (
-    <div className={photoClass}>
+    <div className={`${photoClass} ${single ? singleClass : ""}`}>
       <div className={imgClass}>
         <Image src={photo.src} alt={photo.title} />
       </div>
-      <div className={datailsClass}>
+      <div className={detailsClass}>
         <div>
           <p className={authorClass}>
             {user.data && user.data.username === photo.author ? (
@@ -46,7 +47,7 @@ function PhotoContent({ data }) {
           </ul>
         </div>
       </div>
-      <PhotoComments id={photo.id} comments={comments} />
+      <PhotoComments id={photo.id} comments={comments} single={single} />
     </div>
   );
 }
@@ -63,4 +64,5 @@ PhotoContent.propTypes = {
       id: PropTypes.number,
     }),
   }),
+  single: PropTypes.bool,
 };

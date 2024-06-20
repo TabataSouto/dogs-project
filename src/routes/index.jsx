@@ -2,6 +2,7 @@ import { Route, Routes as Switch } from "react-router-dom";
 import Home from "../pages/home";
 import Login from "../pages/login";
 import User from "../pages/user";
+import Photo from "../pages/photo";
 import ProtectedRoute from "./ProtectedRoute";
 
 function AppRoutes() {
@@ -19,6 +20,7 @@ function AppRoutes() {
           </ProtectedRoute>
         }
       />
+      <Route path="/foto/:id" element={<Photo />} />
     </Switch>
   );
 }

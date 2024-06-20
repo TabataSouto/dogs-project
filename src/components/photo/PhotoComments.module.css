@@ -9,4 +9,6 @@
   line-height: 1.2;
 }
 
- 
+.singleClass.commentsClass {
+  padding: 0;
+}

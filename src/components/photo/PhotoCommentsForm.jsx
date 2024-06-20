@@ -6,8 +6,8 @@ import { COMMENT_POST } from "../../api";
 import { ReactComponent as Enviar } from "../../assets/enviar.svg";
 import styles from "./PhotoCommentsForm.module.css";
 
-function PhotoCommentsForm({ id, setComments }) {
-  const { formClass, textareaClass, buttonClass } = styles;
+function PhotoCommentsForm({ id, setComments, single }) {
+  const { formClass, textareaClass, buttonClass, singleClass } = styles;
   const { request, error } = useFetch();
   const [comment, setComment] = useState("");
 
@@ -29,7 +29,10 @@ function PhotoCommentsForm({ id, setComments }) {
   };
 
   return (
-    <form className={formClass} onSubmit={handleSubmit}>
+    <form
+      className={`${formClass} ${single ? singleClass : ""}`}
+      onSubmit={handleSubmit}
+    >
       <textarea
         className={textareaClass}
         id="comment"
@@ -51,4 +54,5 @@ export default PhotoCommentsForm;
 PhotoCommentsForm.propTypes = {
   id: PropTypes.number,
   setComments: PropTypes.func,
+  single: PropTypes.bool,
 };

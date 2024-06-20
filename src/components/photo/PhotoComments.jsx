@@ -7,7 +7,7 @@ import styles from "./PhotoComments.module.css";
 function PhotoComments(props) {
   const commentsSection = useRef(null);
   const { login } = useContext(UserContext);
-  const { commentsClass } = styles;
+  const { commentsClass, singleClass } = styles;
   const [comments, setComments] = useState(() => props.comments);
 
   useEffect(() => {
@@ -16,7 +16,10 @@ function PhotoComments(props) {
 
   return (
     <>
-      <ul ref={commentsSection} className={commentsClass}>
+      <ul
+        ref={commentsSection}
+        className={`${commentsClass} ${props.single ? singleClass : ""}`}
+      >
         {comments.map(({ comment_id, comment_author, comment_content }) => (
           <li key={comment_id}>
             <b>{comment_author}:</b>
@@ -24,7 +27,13 @@ function PhotoComments(props) {
           </li>
         ))}
       </ul>
-      {login && <PhotoCommentsForm id={props.id} setComments={setComments} />}
+      {login && (
+        <PhotoCommentsForm
+          id={props.id}
+          setComments={setComments}
+          single={props.single}
+        />
+      )}
     </>
   );
 }
@@ -34,4 +43,5 @@ export default PhotoComments;
 PhotoComments.propTypes = {
   id: PropTypes.string,
   comments: PropTypes.string,
+  single: PropTypes.bool,
 };

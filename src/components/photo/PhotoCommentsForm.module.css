@@ -5,6 +5,10 @@
   margin: 1rem;
 }
 
+.singleClass.formClass {
+  margin: 1rem 0;
+}
+
 .textareaClass {
   resize: none;
   outline: none;
