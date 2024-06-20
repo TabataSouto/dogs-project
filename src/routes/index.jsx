@@ -4,6 +4,8 @@ import Login from "../pages/login";
 import User from "../pages/user";
 import Photo from "../pages/photo";
 import ProtectedRoute from "./ProtectedRoute";
+import UserProfile from "../components/user/UserProfile";
+import NotFound from "../components/notFound";
 
 function AppRoutes() {
   return (
@@ -12,6 +14,8 @@ function AppRoutes() {
       {/* o /* depois de login é a configuração necessária para
       que subrotas sejam aceitas. Como por exemplo /login/criar */}
       <Route path="/login/*" element={<Login />} />
+      <Route path="/foto/:id" element={<Photo />} />
+      <Route path="*" element={<NotFound />} />
       <Route
         path="/conta/*"
         element={
@@ -20,7 +24,14 @@ function AppRoutes() {
           </ProtectedRoute>
         }
       />
-      <Route path="/foto/:id" element={<Photo />} />
+      <Route
+        path="/perfil/:user"
+        element={
+          <ProtectedRoute>
+            <UserProfile />
+          </ProtectedRoute>
+        }
+      />
     </Switch>
   );
 }
