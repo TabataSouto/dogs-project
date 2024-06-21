@@ -31,5 +31,5 @@ function PhotoDelete({ id }) {
 export default PhotoDelete;
 
 PhotoDelete.propTypes = {
-  id: PropTypes.number,
+  id: PropTypes.number.isRequired,
 };

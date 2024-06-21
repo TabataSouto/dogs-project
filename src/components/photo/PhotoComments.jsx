@@ -41,7 +41,7 @@ function PhotoComments(props) {
 export default PhotoComments;
 
 PhotoComments.propTypes = {
-  id: PropTypes.string,
-  comments: PropTypes.string,
+  id: PropTypes.number.isRequired,
+  comments: PropTypes.array.isRequired,
   single: PropTypes.bool,
 };

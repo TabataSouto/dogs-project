@@ -45,8 +45,8 @@ function FeedPhotos({ user, setModalPhoto, page, setInfinite }) {
 export default FeedPhotos;
 
 FeedPhotos.propTypes = {
-  setModalPhoto: PropTypes.func,
-  user: PropTypes.object,
-  page: PropTypes.string,
-  setInfinite: PropTypes.func,
+  setModalPhoto: PropTypes.func.isRequired,
+  user: PropTypes.string.isRequired,
+  page: PropTypes.number.isRequired,
+  setInfinite: PropTypes.func.isRequired,
 };

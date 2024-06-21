@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import styles from "./Input.module.css";
 
-function Input({ label, type, name, value, onChange, error, onBlur }) {
+function Input({ label, type, name, value, onChange, error = "", onBlur }) {
   const { wrapper, inputClass, errorClass, labelClass } = styles;
 
   return (
@@ -27,11 +27,11 @@ function Input({ label, type, name, value, onChange, error, onBlur }) {
 export default Input;
 
 Input.propTypes = {
-  label: PropTypes.string,
-  type: PropTypes.string,
-  name: PropTypes.string,
-  value: PropTypes.string,
-  onChange: PropTypes.func,
+  label: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  value: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
   error: PropTypes.string,
-  onBlur: PropTypes.func,
+  onBlur: PropTypes.func.isRequired,
 };

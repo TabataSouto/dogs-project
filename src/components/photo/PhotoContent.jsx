@@ -55,14 +55,17 @@ function PhotoContent({ data, single }) {
 export default PhotoContent;
 
 PhotoContent.propTypes = {
-  data: PropTypes.objectOf({
-    photo: PropTypes.objectOf({
-      src: PropTypes.string,
-      title: PropTypes.string,
-      author: PropTypes.string,
-      acessos: PropTypes.number,
-      id: PropTypes.number,
-    }),
-  }),
+  data: PropTypes.shape({
+    photo: PropTypes.shape({
+      src: PropTypes.string.isRequired,
+      title: PropTypes.string.isRequired,
+      author: PropTypes.string.isRequired,
+      acessos: PropTypes.number.isRequired,
+      id: PropTypes.number.isRequired,
+      peso: PropTypes.string.isRequired,
+      idade: PropTypes.string.isRequired,
+    }).isRequired,
+    comments: PropTypes.array.isRequired,
+  }).isRequired,
   single: PropTypes.bool,
 };

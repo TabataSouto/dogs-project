@@ -35,6 +35,6 @@ function FeedModal({ photo, setModalPhoto }) {
 export default FeedModal;
 
 FeedModal.propTypes = {
-  photo: PropTypes.objectOf(),
-  setModalPhoto: PropTypes.func,
+  photo: PropTypes.shape({ id: PropTypes.number.isRequired }).isRequired,
+  setModalPhoto: PropTypes.func.isRequired,
 };

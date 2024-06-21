@@ -52,7 +52,7 @@ function PhotoCommentsForm({ id, setComments, single }) {
 export default PhotoCommentsForm;
 
 PhotoCommentsForm.propTypes = {
-  id: PropTypes.number,
-  setComments: PropTypes.func,
+  id: PropTypes.number.isRequired,
+  setComments: PropTypes.func.isRequired,
   single: PropTypes.bool,
 };

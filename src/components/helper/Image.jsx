@@ -28,5 +28,5 @@ function Image({ alt, ...props }) {
 export default Image;
 
 Image.propTypes = {
-  alt: PropTypes.string,
+  alt: PropTypes.string.isRequired,
 };

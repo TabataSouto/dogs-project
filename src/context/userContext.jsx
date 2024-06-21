@@ -87,5 +87,5 @@ export function UserStorage({ children }) {
 }
 
 UserStorage.propTypes = {
-  children: PropTypes.node,
+  children: PropTypes.node.isRequired,
 };

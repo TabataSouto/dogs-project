@@ -20,10 +20,10 @@ function FeedPhotosItem({ photo, setModalPhoto }) {
 export default FeedPhotosItem;
 
 FeedPhotosItem.propTypes = {
-  photo: PropTypes.objectOf({
-    src: PropTypes.string,
-    title: PropTypes.string,
-    acessos: PropTypes.string,
-  }),
-  setModalPhoto: PropTypes.func,
+  photo: PropTypes.shape({
+    src: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    acessos: PropTypes.string.isRequired,
+  }).isRequired,
+  setModalPhoto: PropTypes.func.isRequired,
 };
