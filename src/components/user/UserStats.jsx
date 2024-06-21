@@ -1,7 +1,12 @@
+import Head from "../../components/helper/Head";
+
 function UserStats() {
   return (
-    <div>Estatisticas usuário</div>
-  )
+    <div>
+      <Head title="Estatísticas" />
+      Estatisticas usuário
+    </div>
+  );
 }
 
-export default UserStats
+export default UserStats;

@@ -1,12 +1,11 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
-
 import { UserContext } from "../../context/userContext";
 import Input from "../../components/forms/Input";
 import Button from "../../components/forms/Button";
 import useForm from "../../hooks/useForm";
 import Error from "../../components/helper/Error";
-
+import Head from "../../components/helper/Head";
 import styles from "./LoginForm.module.css";
 import btnStyle from "../forms/Button.module.css";
 
@@ -28,6 +27,7 @@ function LoginForm() {
 
   return (
     <section className="animeLeft">
+      <Head title="Login" />
       <h1 className="title">Login</h1>
       <form className={formClass} onSubmit={handleClick}>
         <Input label="Usuário" type="text" name="username" {...username} />

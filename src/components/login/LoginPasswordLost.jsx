@@ -1,9 +1,10 @@
+import { PASSWORD_LOST } from "../../api";
+import useForm from "../../hooks/useForm";
+import useFetch from "../../hooks/useFetch";
 import Input from "../../components/forms/Input";
 import Button from "../../components/forms/Button";
 import Error from "../../components/helper/Error";
-import useForm from "../../hooks/useForm";
-import useFetch from "../../hooks/useFetch";
-import { PASSWORD_LOST } from "../../api";
+import Head from "../../components/helper/Head";
 
 function LoginPasswordLost() {
   const { data, error, loading, request } = useFetch();
@@ -24,6 +25,7 @@ function LoginPasswordLost() {
 
   return (
     <section>
+      <Head title="Perdeu a senha" />
       <h1 className="title">Perdeu a senha?</h1>
       {data ? (
         <p style={{ color: "#4c1"}}>{data}</p>

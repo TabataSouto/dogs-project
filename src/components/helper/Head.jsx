@@ -9,7 +9,7 @@ function Head({ title, description = "" }) {
       .setAttribute("content", description);
   }, [title, description]);
 
-  return <div>Head</div>;
+  return <div></div>;
 }
 
 export default Head;

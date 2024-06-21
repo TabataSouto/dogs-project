@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { PASSWORD_RESET } from "../../api";
 import useForm from "../../hooks/useForm";
 import useFetch from "../../hooks/useFetch";
 import Input from "../../components/forms/Input";
 import Button from "../../components/forms/Button";
 import Error from "../../components/helper/Error";
-import { useNavigate } from "react-router-dom";
+import Head from "../../components/helper/Head";
 
 function LoginPasswordReset() {
   const navigate = useNavigate();
@@ -39,6 +40,7 @@ function LoginPasswordReset() {
 
   return (
     <section>
+      <Head title="Resete a senha" />
       <h1 className="title">Resete a Senha</h1>
       <form onSubmit={handleSubmit}>
         <Input
