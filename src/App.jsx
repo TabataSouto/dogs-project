@@ -6,10 +6,12 @@ import { UserStorage } from "./context/userContext";
 
 function App() {
   return (
-    <div>
+    <div className="App">
       <UserStorage>
         <Header />
-        <AppRoutes />
+        <main className="AppBody">
+          <AppRoutes />
+        </main>
         <Footer />
       </UserStorage>
     </div>
