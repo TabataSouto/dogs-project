@@ -5,7 +5,7 @@ import User from "../pages/user";
 import Photo from "../pages/photo";
 import UserProfile from "../components/user/UserProfile";
 import NotFound from "../components/notFound";
-import ProtectedRoute from "./ProtectedRoute";
+import ProtectedRoute from "./protectedRoute";
 
 function AppRoutes() {
   return (

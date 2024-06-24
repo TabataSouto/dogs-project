@@ -13,8 +13,6 @@ function ProtectedRoute({ children }) {
   } else {
     return <></>;
   }
-
-  // return login ? children : <Navigate to="/login" />;
 }
 
 export default ProtectedRoute;
