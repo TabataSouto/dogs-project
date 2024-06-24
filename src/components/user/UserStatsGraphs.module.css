@@ -1,0 +1,29 @@
+.graphClass {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.graphItemClass {
+  box-shadow: 0 10px 20px rgb(0 0 0 / 0.1);
+  border-radius: 0.2rem;
+  display: grid;
+  align-items: center;
+}
+
+.totalClass {
+  grid-column: 1 / 3;
+  padding: 2rem;
+  font-size: 2rem;
+}
+
+@media (max-width: 40rem) {
+  .graphClass {
+    grid-template-columns: 1fr;
+  }
+
+  .totalClass {
+    grid-column: 1;
+  }
+}
