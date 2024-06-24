@@ -3,9 +3,9 @@ import Home from "../pages/home";
 import Login from "../pages/login";
 import User from "../pages/user";
 import Photo from "../pages/photo";
-import ProtectedRoute from "./ProtectedRoute";
 import UserProfile from "../components/user/UserProfile";
 import NotFound from "../components/notFound";
+import ProtectedRoute from "./ProtectedRoute";
 
 function AppRoutes() {
   return (
