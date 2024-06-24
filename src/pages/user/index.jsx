@@ -1,4 +1,4 @@
-import HeaderRoutes from "../../routes/HeaderRoutes";
+import HeaderRoutes from "../../routes/headerRoutes";
 import UserHeader from "../../components/header/UserHeader";
 import Head from "../../components/helper/Head";
 

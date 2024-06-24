@@ -1,4 +1,4 @@
-import LoginRoutes from "../../routes/Login";
+import LoginRoutes from "../../routes/login";
 import styles from "./Login.module.css";
 
 function LoginPage() {
