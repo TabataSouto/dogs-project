@@ -1,4 +1,4 @@
-import HeaderRoutes from "../../routes/headerRoutes";
+import HeaderRoutes from "../../routes/headerRoutes.jsx";
 import UserHeader from "../../components/header/UserHeader";
 import Head from "../../components/helper/Head";
 import { BrowserRouter } from "react-router-dom";
