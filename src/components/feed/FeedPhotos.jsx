@@ -23,7 +23,7 @@ function FeedPhotos({ user, setModalPhoto, page, setInfinite }) {
 
       if (response && response.ok && json.length < total) setInfinite(false);
     })();
-  }, [request, user, page]);
+  }, [request, user, page, setInfinite]);
 
   if (error) return <Error error={error} />;
   if (loading) return <Loading />;
