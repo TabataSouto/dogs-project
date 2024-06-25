@@ -1,13 +1,16 @@
 import HeaderRoutes from "../../routes/headerRoutes";
 import UserHeader from "../../components/header/UserHeader";
 import Head from "../../components/helper/Head";
+import { BrowserRouter } from "react-router-dom";
 
 function User() {
   return (
     <section className="container">
       <Head title="Minha conta" />
       <UserHeader />
-      <HeaderRoutes />
+      <BrowserRouter>
+        <HeaderRoutes />
+      </BrowserRouter>
     </section>
   );
 }
